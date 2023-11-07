@@ -1,0 +1,565 @@
+body {
+    padding: 10px 30px 20px 30px;
+}
+/* Animation */
+/* Define the keyframes for the fadeInUp animation */
+@keyframes fadeInUp {
+    /* At the beginning of the animation (0% progress) */
+    0% {
+        opacity: 0;           /* Element is completely transparent */
+        transform: translateY(20px); /* Move the element up by 20 pixels */
+    }
+    /* At the end of the animation (100% progress) */
+    100% {
+        opacity: 1;           /* Element is fully visible */
+        transform: translateY(0);    /* Element is back to its original position */
+    }
+}
+
+/* Apply the animation to the header element */
+header {
+      /* Use flexbox to align children horizontally */
+     /* vertically align children in the center */
+    
+    /*animation: fadeInUp 1s ease-in-out;
+    
+    fadeInUp: Name of the animation defined above
+    1s: Duration of the animation (1 second)
+    ease-in-out: Timing function for a gradual start and end
+    */
+    /*color: blueviolet; */
+
+    display: flex;
+    flex-direction: column;  /* Arrange children vertically */
+    align-items: flex-start; /* Align items to the left */
+    position: fixed;
+    width: 100%;
+    background-color: white;
+    z-index: 100;
+    height: 160px;
+    
+    
+}
+
+/* Style header-content(Logo & Menu Bar) */
+.header-content {
+    display: flex;  /* Use flexbox to align children horizontally */
+    align-items: center;  /* Center-align children vertically if needed */
+    flex-direction: row;  /* Arrange children horizontally */
+    justify-content: flex-start;  /* Spread items to both ends (left and right) */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;  /* Set a high z-index to ensure it appears above other content */
+    background-color:white;
+    width: 100%;
+    padding-bottom: 5px;
+    padding-top: 50px;
+    padding-left: 10px;
+    padding-right: 50px;
+    height: 90px; /* Adjust the height to your desired value */
+}
+ 
+.header-content .logo {
+    margin-right: 10px;
+    
+}
+
+/* Style the logo section */
+.logo {
+    flex: 1; /* Allow the logo section to grow and take up available space */
+    padding: 20px 20px 20px 20px; /* Add padding to create space between logo and the frame */
+    /* Add shadow effect */
+    /*box-shadow:
+        3px 3px 5px rgba(241, 134, 12, 0.8),  /* Add a shadow effect - first color*/
+        /*0 0 5px rgba(241, 134, 12, 0.8),
+        3px 3px 10px rgba(53, 47, 47,0.3), /* Add a shadow effect - second color*/
+        /*0 0 10px rgba(53, 47, 47,0.5); 
+          
+    border-radius: 10px;  /* Round the corners of the shadow */
+    
+}
+
+.logo img{
+    width: 200px;  /* Set the width of the logo */
+    height: auto;  /* Maintain aspect ratio */
+    margin-top: 5px;  /* Adjust top margin as needed*/
+    
+}
+
+/* Style the menu bar */
+.menu-bar {
+    background-color: white;  /* Background color for the menubar */
+    padding: 10px 50px 0 5px;  /* Add padding to the top and to the bottom */
+    text-align: center;  /* Center align the buttons horizontally */
+    /*box-shadow:  0 2px 4px rgba(0, 0, 0, 0.2);  /* Apply a shadow to give the menu bar depth */
+    
+
+    
+}
+
+.menu-bar .button a {
+    color: rgb(75, 70, 70);  /* Text color for links */
+    font-weight: bold;
+    text-decoration: none;  /* Remove underlines from links */
+    display: inline-block;  /* Make links inline blocks to control spacing */
+    padding: 10px 20px;  /* Add padding to the button */
+    margin: 0 10px;   /* Add margin to separate buttons */
+    border-radius: 5px;  /* Rounded corners for buttons */
+    background-color: white; /* Background color for buttons */
+    transition: background-color 0.3s ease;  /* Smooth background color transition */
+
+    
+
+    
+}
+
+/* Hover effect for buttons */
+.menu-bar .button a:hover {
+    /*background-color: rgb(206, 115, 10);  /* Change the color for hover */
+    /*color: #706a6a; */
+    color: rgba(241, 134, 12, 0.8);
+}
+
+/* Active(clicked) state for buttons */
+.menu-bar .button a:active {
+    background-color: rgba(241, 134, 12, 0.8); /* Change background color when clicked */
+    color: white;
+
+   
+    
+}
+
+.line1 {
+    border-top: .5px solid rgba(241, 134, 12); /* Solid line */
+}
+
+.line2 {
+    border-top: .5px solid rgb(75, 70, 70); /* Solid line */
+}
+
+.hotel-name {
+    color: rgb(75, 70, 70);
+    font-weight: bold;
+    margin: 0;
+    padding-top: 120px;
+
+}
+
+
+
+
+#home h3 {
+    color: rgba(241, 134, 12);
+    font-family: Trasandina;
+}
+
+.combined-section {
+    overflow: hidden;   /* Hide any content outside the content */
+    width: 100%;  /* Set the container width to 100% of its parent */
+    position: relative; /* Create a stacking context for child element*/
+
+}
+
+/* Styles for the horizontal-scroll section */
+.horizontal-scroll {
+    width: 100%;    /* Take up available width */
+    overflow-x: scroll;  /* Enable horizontal scrolling in .horizontal-scroll class */
+    overflow-y: hidden;  /* Hidden the verticall scrolling/Disable vertical scrolling */
+}
+
+.horizontal-scroll::-webkit-scrollbar {
+    display: none;
+}
+/* Styles for the image container */
+.image-slider {
+    width:max-content;   /* Set the container width to take the full available width */
+    height: 250px; /* Set the container height as needed */
+    white-space: nowrap;  /* Prevent images from wrapping to the next line */
+    
+    width: max-content;   /* Allow the container to expand based on image widths */
+    overflow-x: auto;     /* Enable horizontal scrolling for the image container */
+    display: flex;  /* Create a horizontal flex container */
+    transition: 0.5s ease; /* Add smooth sliding transition */
+
+   
+}
+
+/* Style for each individual image slide */ 
+.image-slide {
+    flex: 0 0 auto;  /* Maintain original image width */ 
+    margin-right: 10px; /* Add spacing between images */
+}
+
+/* Remove default list styling for UL and LI elements 
+ul, li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+*/
+
+.image-slider img {
+    width: 450px;     /* Set a fixed width for all images */   
+    height: 200px;     /* Allow the image to take the full container height */
+    object-fit: cover;  /*Resize the image wile maintaining the aspect ratio..*/
+    display: inline-block;  /*   display images in a row   */
+    margin-right: 10px;    /*   Add space between images   */
+}
+
+/* Style for the special image */
+.special-image {
+    /* Your styling for the special image */
+    display: inline-block;
+    margin: 0 auto; /* Center the special image */
+}
+
+/* Add 3rd line */
+.line3 {
+    border-top: .5px dashed rgba(241, 134, 12);
+}
+
+/* Add styles for the button container */
+.button-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}
+
+/* Style for the custom button (applied to all buttons with class 'custom-button') */
+.custom-button {
+    /*background-color: transparent; */
+    border: none;
+    border-radius: 5px;
+    /*color: #007BFF;*/
+    padding: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    /*transition: background-color 0.3s, color 0.3s;*/
+}
+
+/* Hover effect for the custom button */
+/*.custom-button:hover {
+    background-color: #007BFF;
+    color: #fff;
+}*/
+
+/* Style labels (button1 & button2 - They are really not buttons) */
+.button1,
+.button2 {
+    color: rgb(75, 70, 70);
+    font-weight: bold;
+    padding: 10px;
+    background-color: transparent;
+    border: .1px solid rgb(75, 70, 70);   /* Border style, width, and color */
+    border-radius: 10px;  /* Round coners of the border */
+    display: inline-block;  /* Change to inline-block */
+    margin-right: 8px; /* Adjust the margin to change the space between buttons */
+}
+
+/* Style labels (button3) */
+.button3 {
+    color: rgb(75, 70, 70);
+    font-weight: bold;
+    padding: 10px;
+    background-color:rgb(241, 134, 12);
+    border: .1px solid rgb(75, 70, 70);   /* Border style, width, and color */
+    border-radius: 10px;  /* Round coners of the border */
+    display: inline-block;  /* Change to inline-block */
+}
+
+/* Hover effect for labels */
+.button1:hover,
+.button2:hover {
+    background-color: rgba(75, 70, 70,.2);
+    transition: background-color 0.3s ease;     /* Smooth transition for background-color */ 
+}
+
+/* Hover effect for label (button3) */
+.button3:hover {
+    background-color: rgba(241, 134, 12,.8);  
+    transition: background-color 0.3s ease;       /* Smooth transition for background-color */
+}
+
+/* Active (clicked) state for the custom button */
+.button1:active,
+.button2:active {
+    border: 0.2px solid rgb(241, 134, 12);
+    
+}
+
+.button3:active {
+    border: 0.2px solid rgb(241, 134, 12);
+}
+
+/* Initially hide the label */
+/* Style for the hidden label */
+.hidden-label {
+    display: none;               /* Initially hidden */
+    position: fixed;             /* Fixed position on the screen */
+    top: 50%;                    /* Vertically centered from the top */
+    left: 50%;                   /* Horizontally centered from the left */
+    transform: translate(-50%, -50%); /* Center the label perfectly */
+    background-color: white;     /* Background color of the label */
+    padding: 20px;               /* Padding around the label content */
+    border: 1px solid #ccc;      /* Border around the label */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Shadow for the label */
+    z-index: 999;               /* Ensure it appears above other content */
+    text-align: center;          /* Center-align label content */
+    filter: blur(5px);           /* Apply blur to the background content */
+    width: 80%;                  /* Set the width of the label */
+    height: 60%;                 /* Set the height of the label */
+    overflow: auto;              /* Add scrolling for large content */
+}
+
+/* Apply blur effect to the whole web page when hidden-label is opened */
+.blur {
+    filter: blur(5px); /* Apply a blur effect to the entire page */
+
+}
+
+/* Apply styles for room */
+.rooms h2 {
+    font-weight: bold;
+    color: rgb(241, 134, 12);
+    
+}
+
+.list1 ul {
+    list-style-type: none ;  /* Remove the default list bullets */
+    padding: 0;  /* Removing any default padding */
+
+}
+
+.list1 li {
+    display: inline;
+    margin-right: 80px;
+    color: rgb(75, 70, 70);
+    padding-right: 30px;  /* To add padding to the right of the list1 item */
+    font-weight: bold;  /* To bold each item in list */
+    
+}
+
+/* Add style when make the each item convert to a link */
+.list1 a {
+    text-decoration: none; /* Remove the underline */
+    color: inherit; /* Inherit the color from the parent element */
+    cursor: pointer; /* Change the cursor to a pointer on hover to indicate it's clickable */
+}
+
+
+.list1 li::before {
+    content: "✔ "; /* Use the bullet symbol or any other symbol you prefer */
+    /*font-weight: bold;*/
+    margin-right: 5px; /* Adjust the spacing between the symbol and text as needed */
+    padding-left: 25px;  /* Add padding to the left before the item */
+    padding-right: 0;
+}
+
+/* Make a hover effect to the whole list 
+.list1:hover {
+    background-color: rgb(204, 204, 204);
+} */
+
+/* Make a hover effect to the each item of the list */
+.list1 li:hover {
+    background-color: rgb(241, 174, 98);
+}
+
+/* Make style list2 */
+.list2 ul {
+    list-style-type: none ;  /* Remove the default list bullets */
+    padding: 0;  /* Removing any default padding */
+
+}
+
+.list2 li {
+    color: rgb(75, 70, 70);
+    padding-right: 30px;  /* To add padding to the right of the list1 item */
+    font-weight: bold;  /* To bold each item in list */
+}
+
+.list2 li::before {
+    content: "✔ "; /* Use the bullet symbol or any other symbol you prefer */
+    /*font-weight: bold;*/
+    /*margin-right: 5px; /* Adjust the spacing between the symbol and text as needed */
+    padding-left: 50px;  /* Add padding to the left before the item */
+    padding-right: 0;
+}
+
+/* Make a hover effect to the each item of the list */
+.list2 li:hover {
+    color: rgb(241, 134, 12);
+}
+
+.contact h2 {
+    font-weight: bold;
+    color: rgb(241, 134, 12);
+}
+
+.call-button {
+    background-color: rgb(241, 134, 12);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+/* Call-button background with hover effect */
+.call-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(1); /* Initial scale for transition */
+  transition: opacity 0.4s ease, transform 0.4s ease; /* Increase the duration for a slower animation */
+}
+
+/* Apply hover effect on whatsapp button */
+.call-button:hover {
+    transform: scale(1.1); /* Scale the button up by 10% on hover */
+    max-width: 110%; /* Limit the width increase to 110% */
+    max-height: 110%; /* Limit the height increase to 110% */
+    opacity: 1;  /* Show the background on hover */
+    transition: opacity 0.4s ease, transform 0.4s ease; /* Adjust the duration for the hover animation */
+    background-color: rgb(255, 136, 0);
+
+}
+
+.whatsapp img {
+    padding-top: 10px;
+    width: 200px !important;
+    height: auto;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    transform-origin: center; /* Set the transform origin to the center */
+    vertical-align: middle;
+    
+}
+
+/* WhatsApp button background with hover effect */
+.whatsapp img::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(1); /* Initial scale for transition */
+  transition: opacity 0.4s ease, transform 0.4s ease; /* Increase the duration for a slower animation */
+}
+
+/* Apply hover effect on whatsapp button */
+.whatsapp img:hover {
+    transform: scale(1.1); /* Scale the button up by 10% on hover */
+    max-width: 110%; /* Limit the width increase to 110% */
+    max-height: 110%; /* Limit the height increase to 110% */
+    opacity: 1;  /* Show the background on hover */
+    transition: opacity 0.4s ease, transform 0.4s ease; /* Adjust the duration for the hover animation */
+
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border: 2px solid rgb(75, 70, 70)s;
+    margin-bottom: 100px;
+    
+}
+
+
+
+/* Style the sub-heading */
+.table h2 {
+    color: rgb(241, 134, 12);
+}
+table, th, td {
+    border: 1px solid #333;
+}
+
+th, td {
+    padding: 8px;
+    text-align: middle;
+}
+
+/* Apply styles to a special row on table */
+.highlight-row {
+    background-color: rgb(241, 134, 12);
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.highlight-row th {
+    vertical-align: left; 
+}
+
+/* Hover effect for the highlight row */
+.highlight-row:hover {
+    background-color: rgb(241, 174, 98);
+    
+}
+
+/* Hover effect for the information cell in table */
+.info-col:hover {
+    background-color: rgb(255, 136, 0);
+    color: rgb(75, 70, 70);
+    
+    
+}
+
+/* Hover effect for the discription cell in table */
+.dis-col:hover {
+    background-color: rgb(255, 136, 0);
+    color: rgb(75, 70, 70);
+}
+/* ... Media queries for responsive design ... */
+
+/* style data in table row (tr,td) */
+tr,td {
+    text-align: center;
+    color: rgb(75, 70, 70);
+    min-width: 100%;
+}
+
+/* style hover effect on data in table row (tr,td) */
+tr:hover td {
+    color: rgb(2, 2, 2);
+    
+}
+
+
+
+.amenities h2 {
+    color: rgb(241, 134, 12);
+    
+}
+
+/* Styles for the gallery */
+.gallery h2 {
+    color: rgb(241, 134, 12);
+}
+
+/* Add initial styles for the animated elements */
+.animated-div p {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
